@@ -23,14 +23,15 @@ public class UtenteService implements UserDetailsService {
 		this.utenteRepository = utenteRepository;
 	}
 
+	//ricerca dell'utente tramite username e assegnazione del ruolo
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Utenti utente = utenteRepository.findByUsername(username);
 		if (utente == null) {
 			throw new UsernameNotFoundException("Utente non trovato");
 		}
-		List<SimpleGrantedAuthority> authorities = new ArrayList<>(); //crea un'autorita` generica di default
-		authorities.add(new SimpleGrantedAuthority("ROLE_USER")); //crea un ruolo generico per l'utente
+		List<SimpleGrantedAuthority> authorities = new ArrayList<>(); 
+		authorities.add(new SimpleGrantedAuthority("ROLE_USER")); 
 		return new User(utente.getUsername(), utente.getPassword(), authorities);
 	}
 }
