@@ -34,6 +34,6 @@
            	</table>
            </div>
         </main>
-        <script src="script.js" defer></script> <!-- defer carica lo script in contemporanea alla pagine ma lo esegue solo dopo aver finito di caricarla -->
+        <script src="script.js" defer></script>
     </body>
 </html>
