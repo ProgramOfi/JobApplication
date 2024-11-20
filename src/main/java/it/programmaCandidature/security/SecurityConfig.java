@@ -19,29 +19,32 @@ public class SecurityConfig {
 	public SecurityConfig(UtenteService utenteService) {
 		this.utenteService = utenteService;
 	}
+
+	//controllo degli accessi alle pagine
 	@Bean
 	public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests(authz -> authz
-				.requestMatchers("/login", "/register").permitAll() //permette l'accesso a tutti a login e register
-				.anyRequest().authenticated() //richiede l'autenticazione per tutte le altre richieste
+				.requestMatchers("/login", "/register").permitAll()
+				.anyRequest().authenticated() 
 			)
 			.formLogin(form -> form
-				.loginPage("/login") //URL per il login
-				.defaultSuccessUrl("/candidatura/lista", true) //URL che rimanda alla lista di candidature dell'utente dopo il login
-				.failureUrl("/login?error=true") //URL che rimanda alla pagina di errore in caso di accesso errato
+				.loginPage("/login") 
+				.defaultSuccessUrl("/candidatura/lista", true) 
+				.failureUrl("/login?error=true") 
 				.permitAll()
 			)
 			.logout(logout -> logout
-				.logoutUrl("/logout") //URL di logout
-				.logoutSuccessUrl("/login?logout") //URL che rimanda a login dopo il logout
+				.logoutUrl("/logout") 
+				.logoutSuccessUrl("/login?logout") 
 				.permitAll()
 			);
 		return http.build();
 	}
-	
+
+	//codifica della password
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder(); //codifica della password con BCrypt
+		return new BCryptPasswordEncoder();
 	}
 }
