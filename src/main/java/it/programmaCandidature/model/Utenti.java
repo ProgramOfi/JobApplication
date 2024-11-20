@@ -14,16 +14,18 @@ public class Utenti {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idutenti;
 	
-	@Column(unique = true, name = "nome_utente") //unique impone l'unicita` dell'attributo
+	@Column(unique = true, name = "nome_utente")
 	private String username;
+	
 	private String password;
+	
 	@Column(unique = true)
 	private String email;
 	
 	@OneToOne(mappedBy="utente")
 	private Candidatura candidatura;
 	
-//Getters e Setters
+	//Getters e Setters
 	public Integer getIdUtenti() {
 		return idutenti;
 	}
@@ -50,8 +52,8 @@ public class Utenti {
 	}
 	public Candidatura getCandidature() {
         return candidatura;
-    }
-    public void setCandidature(Candidatura candidatura) {
-        this.candidatura = candidatura;
-    }
+	}
+	public void setCandidature(Candidatura candidatura) {
+	        this.candidatura = candidatura;
+	}
 }
