@@ -14,11 +14,10 @@ public class Candidatura {
 	@Column(name="id_idutente")
 	private Integer id_idutente;
 	
-	@Column(name="nome_azienda") //accede alla colonna del database che si chiama "nome_azienda"
-	private String azienda; //crea un attributo da utilizzare nelle altre classi o file, collegato alla colonna "nome_azienda"
+	@Column(name="nome_azienda") 
+	private String azienda;
 	
-	//@Column(name="posizione")
-	private String posizione; //in questo modo accede direttamente alla colonna e crea un attributo con lo stesso nome
+	private String posizione;
 	
 	@Column(name="data_applicazione")
 	private String dataApplicazione;
@@ -28,10 +27,10 @@ public class Candidatura {
 
 	@OneToOne
 	@MapsId
-    @JoinColumn(name = "id_idutenti")
+    	@JoinColumn(name = "id_idutenti")
 	private Utenti utente;
 	
-//Getters e Setters
+	//Getters e Setters
 	public Integer getId_idutenti() {
 		return id_idutente;
 	}
