@@ -20,7 +20,6 @@
         <button class="register" onclick="window.location.href='/register';">Registrati</button>
     </form>
     <script>
-        // Se la query parameter "error" è presente nella URL, mostriamo il messaggio di errore
         if (window.location.search.indexOf("error") !== -1) {
             document.getElementById("errorMessage").style.display = "block";
         }
