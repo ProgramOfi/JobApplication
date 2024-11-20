@@ -13,14 +13,8 @@ public class LoginController {
 	public String login(@RequestParam(value="error", required=false) String error, Model model) {
 		if ("error" != null) {
 			System.out.println("Accessing login page");
-	        model.addAttribute("error", "Username o password errati! Per favore riprova.");
+	        	model.addAttribute("error", "Username o password errati! Per favore riprova.");
 	    }
 		return "login";
 	}
-	
-	/*@PostMapping("/login")
-	public String loginProcess(String username, String password) {
-		System.out.println("Login attempt for: " + username);
-		return "redirect:/candidatura/lista";
-	}*/
 }
