@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login</h1>
-    <form action="/login" method="post">
-    	<input type="hidden" name="_csrf" value="${_csrf.token}" />
-    	<div id="errorMessage" style="color: red; display: none;">
-            Username o password errati!
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Job Application</title>
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="form_login">
+                <div class="card">
+                    <h1>Benvenuto!</h1>
+                    <form action="/login" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                    <div id="errorMessage">
+                        Username o password errati!
+                    </div>
+                    <input type="text" placeholder="Username" id="username" name="username" required>
+                    <br>
+                    <input type="password" placeholder="Password" id="password" name="password" required>
+                    <br>
+                    <button type="submit" class="login">
+                        <span>Login</span>
+                    </button>
+                    <br>
+                    <button class="register" onclick="window.location.href='/register';"><span>Registrati</span></button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Login</button>
-        <button class="register" onclick="window.location.href='/register';">Registrati</button>
-    </form>
-    <script>
-        if (window.location.search.indexOf("error") !== -1) {
-            document.getElementById("errorMessage").style.display = "block";
-        }
-    </script>
-</body>
+        <script src="/js/login.js"></script>
+    </body>
 </html>

@@ -1,0 +1,132 @@
+html,body{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color:rgba(108, 171, 248, 0.5) ;
+    animation: changeColor2 15s infinite !important;
+}
+@keyframes changeColor2{
+    50%{background-color: rgba(126, 248, 238, 0.5);}
+}
+
+.container{
+    height: 100% !important;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+#form_login{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-break: break-word;
+    margin-top: 5%;
+    width: 100%;
+    height: 50%;
+    animation: bounceInDown 2s !important;
+}
+@keyframes bounceInDown {
+    0% {transform: translate3d(0, -3000px, 0);}
+    60% {transform: translate3d(0, 25px, 0);}
+    75% {transform: translate3d(0, -10px, 0);}
+    90% {transform: translate3d(0, 5px, 0);}
+    100% {transform: none;}
+}
+
+.card{
+    padding: 2%;
+    padding-bottom: 4%;
+    width: 20%;
+    max-width: 350px;
+    min-width: fit-content;
+    border-radius: 5px 15px 5px 15px !important;
+    background-color: rgba(46, 93, 89, 0.5);
+    animation: changeColor 15s infinite !important;
+}
+@keyframes changeColor{
+    50%{background-color: rgba(47, 76, 112, 0.5);}
+}
+
+input{
+    border-radius:15px 5px 15px 5px !important;
+    border: 3px inset #9af0f8;
+    margin-top: 1%;
+    text-align: center;
+    min-width: fit-content;
+    width: 95%;
+    height: 20px;
+}
+input:focus{
+    outline: none;
+    box-shadow:none !important;
+    border: 3px outset #5dc2fd !important;
+}
+::-webkit-input-placeholder{
+    color: rgb(188, 188, 188); 
+    font-family: 'Courier New', Courier, monospace;
+}
+::-moz-input-placeholder{
+    color: rgb(188, 188, 188); 
+    font-family: 'Courier New', Courier, monospace;
+}
+::-ms-input-placeholder{
+    color: rgb(188, 188, 188); 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px 15px 5px 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.261);
+    min-width: fit-content;
+    padding: 2% 5% 2% 5%;
+}
+button:hover{
+    box-shadow: 5px 2px 20px rgb(105, 224, 254) inset;
+    cursor: pointer;
+    transition: all 0.5s;
+    padding-right: 10%;
+}
+button:active{
+    box-shadow: 5px 2px 20px rgb(105, 254, 222) inset;
+}
+button span{
+    display: inline-block;
+    position: relative;
+}
+button:hover span:after{
+    content: '\00bb';
+    position: absolute;
+    right: -15px;
+    padding-right: 6%;
+}
+.login{
+    width: 30%;
+    min-height: 20px;
+    margin-top: 10%;
+}
+.register{
+    width: 50%;
+    min-height: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#errorMessage{
+    color: rgb(249, 47, 51);
+    text-shadow: 1px 2px 3px #945757;
+    margin-bottom: 5%;
+    display: none;
+}
